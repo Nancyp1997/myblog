@@ -49,7 +49,7 @@
         target: '#mainNav',
         offset: 80
     });
-
+    
     // Collapse Navbar
     var navbarCollapse = function () {
         if ($("#mainNav").offset().top > 100) {
@@ -75,3 +75,8 @@
     });
 
 })(jQuery); // End of use strict
+
+// var sideBar = document.querySelector('.sect');
+// console.log(sideBar);
+// scrollspy(sideBar);
+
