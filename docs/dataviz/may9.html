@@ -1,0 +1,240 @@
+<html>
+
+<head>
+    <title>Tableau notes</title>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+        integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-rel=popover]').popover({
+                html: true,
+                trigger: "hover"
+            });
+        })
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".sect" data-offset="50">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="./index.html">Nancy's notes</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="./index.html">Articles</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="./index.html/#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#contact">Contact</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+    <header class="masthead1 bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1>
+                Calculations and expressions
+            </h1>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class='sect'>
+
+        <ul class='appendixvals' id="appendixvals">
+            <li><a href="./index.html">Home</a></li>
+        </ul>
+
+
+    </div>
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container1">
+
+            <section id="Introduction">
+                <h4>Introduction</h4>
+                <div class="card2">
+                    <div class="para">
+                        There are many number related, string related, date related inbuilt functions are listed out inside calculation creationg field. <br/>
+                        Click on left-popup of ‘create calculation field’ and search for in-built functions.<br/>
+                        Quick table calculations are the most frequently used calculations. <br/>
+                        <img src="../assets/img/quickcalculations.png" /><br/>
+                        
+                        <ul>
+                            <li>Quick table calculations can be found on any measure that is present in detail or filter area.</li>
+                            <li>Click on the dropdown of the measure -> Quick-table calculation -> Select any </li>
+                        </ul>
+                        <i>Not sure what a measure is!!
+                            <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Confused??"
+                                data-content="In Tableau, a quantitative column is called a measure">Click here!</a>
+                        </i><br /><br />
+                        <b>Steps:</b>
+                        <ul>
+                            <li>Create a table in your worksheet. (Year)Order Date vs OrderDate(Year-Quarter-Month hierarchy)</li>
+                            <li>Remove year of order date in the rows shelf.</li>
+                            <li>Fill any measure (sales) by dragging drop to “Text” box in the graph.</li>
+                            <li>Click on dropdown of any measure, select ‘Quick Table Calculation’->Running Total</li>
+                            <li>Create another column with same plot to compare original vs calculated table. So for that click on measure Sales-> Duplicate-> Drag and drop sales(Copy) to the table in graph area.</li>
+                        </ul>
+                        <br />
+                        <i>If there’s a delta near any measure, it means it has some quick table calculation.</i><br/><br/>
+                        There are four ways to choose Quick calculations direction.<br/>
+                        <img src="../assets/img/quickCalculationDirection.png"/>
+                        <br/>
+                        Table across direction starts calculation from left most value to the right most value.<br/>
+                        We can select the direction by clicking  on quick table calculated field’s dropdown -> Compute using -> Table across/down.<br/>
+                        When we go with variance and SD as aggregations, we compute using cell.-TALK MORE IN THIS ARTICLE<br/>
+                        Once we add a quick calculation to any measure, we can then get "Compute Using" in the dropdown of the measure.<br/>
+                        <img src="../assets/img/ComputeUsing.png"/><br/>
+                        If we compute using date, we will compute across dates and carry the sum(sales) to next year. It is similar to table down and across.<br/>
+                        Experiment using Difference- Try choosing relative to ‘prev’ or next or first or last - its first col for table across and its first row for table down.<br/>
+                        Experiment using Percent of differences - For table across- each cell is ((right-left)/left )*100<br/>
+
+                        Try it !!<br />
+                        <i>How to get row/column wise totals in a table?
+                            <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Answer"
+                                data-content="Click Analyse on window menu bar-> Totals-> Grand totals">Click
+                                here!</a>
+                        </i><br /><br />
+
+                        Percentile type=> Table down -> highest val in col will be 100% and the least val in col will be 0%<br/>
+
+                        <b>Moving average</b><br/>
+                        Moving avg is used to smooth out the fluctuations in data  by calcuating an avg within a given period of time.<br/>
+                        <ul>
+                            <li>New sheet-> plot Year vs Sum(sales)</li>
+                            <li>Make it continuous and day wise.</li>
+                            <li>Drag and drop another sum(sales)-> Click on drop down -> Quick calculation-> Moving average</li>
+                            <li>Plot new sheet -> Year-drill down to Day. Now for the sake of simplicity, let’s examine the movng average in Jan 2015. create a filter with order date drag drop to filter area. and select Year 2015 only. Next add another filter (Drag-drop) and select only Jan month. </li>
+                            <li>Now duplicate Sales column and drag and drop it to the row/col the moving average sales is in.</li>
+                            <li>We can now compare the moving average and normal curves.</li>
+                            <li><img src="../assets/img/movingavg.png" /></li>
+                        </ul>
+                        Let's see how moving average works in numeric tables.<br/>
+                        Plot the graph as below by selecting moving average on Sales column. <br/>
+                        <img src="../assets/img/movingavg1.png"/><br/>
+                        We can see that the moving average is calculated using 'table across'.<br/>
+
+                        <br/>
+                        <b><i>Note: We can always edt the quick table calculationg by Clicking drop down -> Edit Table calculation.</i></b><br/>
+
+
+                        <b>Year to Date Total</b><br/>
+                        In the same table of Year vs Quarter+Month with Sum(Sales) as column values, we can choose YTD calculation over SUM(Sales). Then it calculates sum yearwise in a table across/down manner. <br/><br/>
+                        <b>Compound growth rate</b><br/>
+                        Calculated in a tbale down/across manner monthwise in a year. Didnt understand how first row in Year 2015 was calculated.<br/><br/>
+                        <b>Year by Year Growth value</b><br/>
+                        YearbyYear Growth Value = ((LargerYear - SmallerYear)/SmallerYear)*100<br/><br/>
+
+                        <ul>
+                            <li>Plot Category+Subcategory and drag sales into text field of graph.</li>
+                            <li>Click on quick calculated sales dropdown -> Edit Table Calculation ->Select ’Specific Dimensions’ under ‘Compute Using’.</li>
+                            <li>Select sort order->Custom sort-> Select Sales and sum in both the dropdowns. Select ascending or descending.</li>
+                            <li>If we select ascending, then the running sum of sales will start from the least sum(sales) value (Fasteners and goes to next least value that is labels and adds up fasteners value to the running total)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="LOD Expressions">
+                <h4>LOD Expressions</h4>
+                <div class="card2">
+                    <div class="para">
+                        <u><b>Aggregation and granularity in LOD: </b></u><br/>
+                        <ul>
+                            <li>When we plot Year(OrderDate) vs SUM(Sales),  we have data that is aggregated year wise- as we keep removing aggregation, the more we move towards granular data - Like year-quarter-month-day</li>
+                            <li>At day level, we have greater granularity and raw data and least aggregation.</li>
+                            <li>In Jigsaw puzzle, every piece of puzzle is raw data and the whole puzzle assembled is raw data. Or example of sugar cube.</li>
+                        </ul>
+                        We can check each subcategory average sales in 2 ways.<br/>
+                        <ul>
+                            <li>1. Plot Category+subcategory vs Sales. Drag sales to text area of viz.Select the Sales to be average instead of sum.</li>
+                            <li>2. Use calculated field to include only the average sales like "INCLUDE [SubCategory] : average([Sales])". This is to be used when we want the average to be average of all subcategories totals but dont want subcategory to be displayed on viz.</li>
+                            <li>By using calculated field, we need not even place the subcategory into the worksheet.</li>
+                        </ul>
+
+                        To see overall subcategories performance in a category, we plot avg(sales) vs category.<br/>
+                        Create a calculated field with "{ INCLUDE [Sub-Category] : AVG([Sales])}" and drag-drop to the viz.<br/>
+                        Change the measure of the calculated field in viz to 'average'.<br/>
+                        
+                        <b>How to exclude a field present  in viz from calculation?</b><br/>
+                        Plot AVG(Sales) vs (State+City)<br/>
+                        Now we dont want to calculate city wise average and only want state wise average(though city is in viz).<br/>
+                        For that we use 'EXCLUDE' inside LOD like "{ EXCLUDE [CITY] : AVG([SALES])}"<br/>
+                        Drag-drop calculated field to the viz.<br/>
+
+                        
+                    </div>
+                </div>
+            </section>
+
+
+
+YTD growth: Didn’t understand.
+
+
+        </div>
+    </section>
+
+    <!-- </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+<script>
+
+
+    var listItems = (document.querySelectorAll('.container1 h4'));
+    console.log(listItems);
+    var uli = document.querySelector('.appendixvals');
+    for (var i = 0; i < listItems.length; i++) {
+
+        var headingValue = listItems[i].textContent;
+        listItems[i].setAttribute("id", headingValue);
+        console.log(headingValue)
+        var listItemElement = document.createElement("li");
+        var anchorTagElement = document.createElement("A");
+        var urlTextValue = '#' + headingValue;
+        anchorTagElement.setAttribute("href", urlTextValue);
+        anchorTagElement.setAttribute("class", "js-scroll-trigger");
+        anchorTagElement.textContent = headingValue;
+        // l.textContent = nanval;
+        listItemElement.appendChild(anchorTagElement);
+        // var t = document.createTextNode(nanval);
+        uli.appendChild(listItemElement);
+    }
+</script>
+
+</html>

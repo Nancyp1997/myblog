@@ -1,0 +1,760 @@
+<html>
+
+<head>
+    <title>Tableau notes</title>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+        integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-rel=popover]').popover({
+                html: true,
+                trigger: "hover"
+            });
+        })
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".sect" data-offset="50">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="./index.html">Nancy's notes</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="./index.html">Articles</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="./index.html/#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#contact">Contact</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+    <header class="masthead1 bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1>
+                Sets, Bins, Parameters, Actions
+            </h1>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class='sect'>
+
+        <ul class='appendixvals' id="appendixvals">
+            <li><a href="./index.html">Home</a></li>
+        </ul>
+
+
+    </div>
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container1">
+
+            <section id="Sets & Types">
+                <h4>Sets & Types</h4>
+                <div class="card2">
+                    <div class="para">
+                        Sets are subset of your data linked to a condition.
+                        There are 3 types of sets.<br />
+                        <ul>
+                            <li>Constant sets[Multi dimensional]</li>
+                            <li>Computed sets[One dimensional]</li>
+                            <li>Combined sets[Multi dimensional]</li>
+                        </ul>
+                        <i>Not sure what dimension is!!
+                            <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Confused??"
+                                data-content="In Tableau, a categorical column is called a dimension">Click here!</a>
+                        </i><br />
+                        <i>Not sure what a measure is!!
+                            <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Confused??"
+                                data-content="In Tableau, a quantitative column is called a measure">Click here!</a>
+                        </i><br /><br />
+
+                        <br />
+
+                        <div id="accordion" style="opacity: 100%;background-color: whitesmoke ;padding-top: 0.2em;">
+                            <div class="card" style=" padding: 1em;">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            <b>CONSTANT SET</b>
+                                        </a>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Constant sets are multi dimensional i.e, const sets can have more than
+                                                one column in its data.</li>
+                                            <li>These have to be created manually.</li>
+                                            <li>Check this video to see how a constant set is created.</li>
+                                            <li>Created constant sets are placed under dimensions (eventhough they have
+                                                continuous data in it because after being placed in set, the values are
+                                                countable).</li>
+                                        </ul>
+
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe src="https://www.youtube.com/embed/Cq3FWBuOmsc"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                        <br />
+                                        <b>
+                                            <a style="color: #2c3e50;" tabindex="0" class="link" data-toggle="popover"
+                                                data-trigger="focus" title="Steps"
+                                                data-content="Drag-drop the set onto the color of the graph. Check the data according to the color legend.">How
+                                                do I check the items in the constant set?</a>
+                                        </b><br />
+                                        <br />
+                                        <i><b>Note:</b> Distinct features of constant set is that even if the underlying
+                                            data changes, the data in constant set <u>doesn't</u> change.<br />
+                                            To get the data of constant set refreshed or to get new updated data which
+                                            is being overridden due to constant set creation, we can remove the data
+                                            from the set.
+                                        </i><br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            <b>COMPUTED SET</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Uses some underlying condition logic to create the set.</li>
+                                            <li>Unlike the constant set, computed set dynamically updates its members on
+                                                auto-refresh, if there are any underlying changes in the data.</li>
+                                            <li>It is <b>one dimensional</b> i.e, you can have only entries of only one
+                                                column in the computed set.</li>
+                                            <li>How to create it?<ul>
+                                                    <li>Hover over to the dimension of choice</li>
+                                                    <li>Click the drop-down icon.</li>
+                                                    <li>Create set</li>
+                                                    <li>While creating set, set the condition like 'Top3' or 'bottom 3'
+                                                        or 'middle 5'</li>
+                                                </ul>
+                                            </li>
+                                            <div class="embed-responsive embed-responsive-21by9">
+                                                <iframe src="https://www.youtube.com/embed/ErNzdbKzMKo"
+                                                    title="YouTube video player" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
+                                            </div>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            <b>COMBINED SET</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+
+                                        <ul>
+                                            <li>Select any set. </li>
+                                            <li>Click on drop down-> Create combined set.</li>
+                                            <li>In the dialog box, select the other set you want to combine it with.
+                                            </li>
+                                            <li>CAN BE CREATED FOR <b>BOTH ONE DIMENSIONAL AND MULTI DIMENSIONAL.</b>
+                                            </li>
+                                            <li>Try creating two sets - top 2 by some condition and bottom 2 by same
+                                                condition.Create combined set. Eg: Top and bottom 2 item-categories by
+                                                sales. </li>
+                                        </ul>
+                                        <b>Note: Only two sets with same dimensions can be combined with one another.
+                                        </b><br />
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe src="https://www.youtube.com/embed/kgksgS-6Qiw"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        Try it !!<br />
+                        <i>How to get Top 6-10 rows of a dimension?
+                            <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Answer"
+                                data-content="1. Create Top 10 set 2. Create Top 5 set 3. Create combined set by selecting left/right outer join for above created sets.">Click
+                                here!</a>
+                        </i><br /><br />
+                        We cannot create sets for measures ( quantitative columns), instead we create bins. <br />
+                        Sets for dimensions(discrete values)<br />
+                        Bins for measures(continuous values) <br />
+                    </div>
+                </div>
+            </section>
+
+            <section id="Bins">
+                <h4>Bins</h4>
+                <div class="card2">
+                    <div class="para">
+                        <p>
+                            Bins are created to analyze the distribution of any quantitative variable. They are
+                            containers of equal size that hold data that fall in its range.
+                            <br />
+                            We use bins in bar charts, histograms.<br />
+                            In bar chart --> Gaps between bins are present.<br />
+                            In histogram --> No gaps are present between bins or very thin gaps indicating continuous in
+                            nature.<br />
+                            In general, we need to visualize the distribution of a continuous variable to check if it
+                            follows normal distribution or not.<br />
+                            For that, in Tableau, we can either use histogram or create bar chart
+                            We can visualize the distribution of a quantitative variable using either "bin vs
+                            cnt(Column)" or by plotting "histogram" directly on quantitative column.<br />
+                        </p>
+                        <div id="accordion" style="opacity: 100%;background-color: whitesmoke ;padding-top: 0.2em;">
+                            <div class="card" style=" padding: 1em;">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            <b>BINS - BAR CHART</b>
+                                        </a>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+
+                                        Steps:<br />
+                                        <ul>
+                                            <li>Click on drop down of measure(quantitative variable)</li>
+                                            <li>Create bin</li>
+                                            <li>We can choose bin size or choose to keep the default bin size. </li>
+                                            <li><i>Tableau creates a default bin size by some formula.</i>We can either
+                                                continue or choose another bin size.</li>
+                                            <li>In the popup, the value under 'cntD' indiciates the number of distinct
+                                                values for a column.</li>
+                                            <li>Generates a count of values that lie in the bin range and generates the
+                                                height of the bar.</li>
+                                        </ul>
+                                        After creating bins on 'measures'(quantitative variable), the bin now goes under
+                                        dimensions(categorical variable) becuase now we are assignning a count to each
+                                        distinct value of the measure.<br />
+                                        This is called <b>"binned dimension".</b><br />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            <b>HISTOGRAM</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+
+                                        We plot the histogram directly on the continuous quantitative variable. So, the
+                                        gaps between bins in a histogram is very thin. <br />
+                                        <ul>
+                                            <li>Drag-drop the measure to rows area</li>
+                                            <li>In top-right corner, click on Show Me, select Histogram graph option.
+                                            </li>
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <iframe src="https://www.youtube.com/embed/N9PRW4RnYeU" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </section>
+
+            <section id="Parameters">
+                <h4>Parameters</h4>
+                <div class="card2">
+                    <div class="para">
+                        Parameters are used to make the visualisation more <b>dynamic or interactive </b>by letting
+                        users choose the values to be displayed.<br />
+                        Parameters are generally used to get input from the end user, giving more power to the user than
+                        the author in setting values of the viz. It then applies some logic using
+                        dynamic values, taken from the user and displays the worksheet accordingly.<br />
+                        They are dynamic values that replace the constant values in a viz.<br />
+                        Get input form user -> Apply some formula -> Changes displayed in worksheet accordingly -> It
+                        can replace any value with dynamic values.
+                        <br />
+                        <b>Filters are used to narrow down the data.</b><br /><br />
+                        There are three types of parameters.<br /><br />
+
+
+                        <div id="accordion" style="opacity: 100%;background-color: whitesmoke ;padding-top: 0.2em;">
+                            <div class="card" style=" padding: 1em;">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            <b>Parameters with filters & sets</b>
+                                        </a>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        For a measure we cannot add a parameter to its filter.<br />
+                                        For a dimension:<br />
+                                        Create a new parameter by clicking on icon on top right corner of left
+                                        menu.<br />
+                                        <ul>
+                                            <li>Edit filter of any dimension </li>
+                                            <li>Go to Top tab -> By field row</li>
+                                            <li>Top val -> Click on create new parameter or use already created
+                                                parameter there or enter a value manually.</li>
+                                            <li>Parameters are displayed separately at the bottom of left menu.</li>
+                                            <li>Click on the parameter, which we have used in step 3, drop down and
+                                                select 'Show Parameter'.</li>
+                                            <li>This displays the slider on top right.</li>
+                                            <li>Move slider and now we can dynamically change values.</li>
+                                        </ul>
+                                        Eg: For sample superstore dataset, plot Sales vs State, in row area, click on
+                                        State -> Create filter -> Top tab -> Create parameter ->show it in
+                                        viz<br /><br />
+                                        <b>Parameters in Sets</b><br />
+                                        In sets, we can create a parameter only in the 'Top tab' for computed sets
+                                        only.<br />
+                                        Eg:<br />
+                                        Create a computed set on any dimension(State) by clicking on its drop down on
+                                        left menu. While creating the set, go to Top tab, create a new parameter there
+                                        for the Top tab value.<br />
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            <b>Parameters with bins</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>For any measure, we can create bins for it. </li>
+                                            <li>While creating bins, we need to choose the bin size.</li>
+                                            <li>We can make user choose the bin size by creating a parameter for it.
+                                            </li>
+                                            <li>When we create a histogram for that measure or use the binned dimension,
+                                                we can enable the 'Show Parameter' on the viz.</li>
+                                            <li><i>When u create a param through the measure dialog box, (In sales, when
+                                                    creating bins,if u click on new param, ), we can only choose data
+                                                    type of that particular measure.</i></li>
+                                        </ul>
+                                        Eg: <br />
+                                        For sales measure, create bins, in top tab , create a new parameter.
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            <b>Parameters with calculations in Tableau</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Create a parameter with corresponding data type.</li>
+                                            <li>Create calculated field</li>
+                                            <li>Drag drop calculated field to color in graph</li>
+                                            <li>Calculated field comes under dimensions</li>
+                                            <li>How to make calculated field dynamic? Using 'PARAMETER'!!!!</li>
+                                            <li>Replace the static value with the parameter created in step 1</li>
+                                        </ul>
+
+                                        Eg: States having sales less than 1 lakh sales are low income, rest are high
+                                        income states.<br />
+                                        1. Create a parameter to set the border that distinguishes high sales from low
+                                        sales states. Int data type and some value.<br />
+                                        2. Plot Sum(Sales) vs State<br />
+                                        3. Create a calculation field on Sales specifying the condition and using the
+                                        parameter created in Step - 1<br />
+                                        4. Drag drop the calculation onto the color of the graph.<br />
+                                        5. Show parameter and alter it in viz<br />
+
+
+
+
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe src="https://www.youtube.com/embed/7_ZBHm9Gdug"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        In filters and sets -> only in top tab, a param can be used.<br />
+                        In bins, only in bin sizes, a param can be used.<br />
+                    </div>
+                </div>
+                <br /><br />
+            </section>
+
+
+
+            <section id="Actions">
+                <h4>Actions</h4>
+                <div class="card2">
+                    <div class="para">
+                        What is action in Tableau & wts its purpose?<br />
+                        Parameters can make values in viz dynamic and interactive. Actions can make viz even more user
+                        interactive.<br />
+                        Users can interact with your visualisations by selecting marks, or hovering, or clicking a menu,
+                        and the actions you set up can respond with navigation and changes in the view.<br />
+
+                        There are six types of actions.<br />
+                        <ul>
+                            <li>By filter</li>
+                            <li>By highlight</li>
+                            <li>By Go to sheet</li>
+                            <li>By URL</li>
+                            <li>Change set values</li>
+                            <li>Change parameter</li>
+                        </ul><br />
+
+                        Sheet 1: Category vs sum(sales)
+                        Sheet 2: Sub category + Category vs Sum(Sales)
+                        Create new dashboard -> Drag drop both sheets to the dashboard.
+                        Usually 5 to 6 sheets are placed in a dashboard.
+                        How to create it?
+                        Dashboard menu -> Actions
+                        Each one in detail below:<br />
+
+                        <div id="accordion" style="opacity: 100%;background-color: whitesmoke ;padding-top: 0.2em;">
+                            <div class="card" style=" padding: 1em;">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            <b>Filter Actions</b>
+                                        </a>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Filter actions pass information between worksheets or sheets inside a
+                                                dashboard.</li>
+                                            <li>We can either select/hover/rightclick-menu-actionfilter on source
+                                                sheet/s and the action would be performed on the target sheet.</li>
+                                            <li>We can also choose what happens in the target when we clear our
+                                                selection in source sheet. (Leave all values/Show all values/Exclude all
+                                                values)</li>
+                                            <li>How to create it?</li>
+                                            <li>Steps:
+                                                <ul style="list-style-type: none;">
+                                                    <li>Worksheet/Dashboard -> Actions</li>
+                                                    <li>Add Action->Filter</li>
+                                                    <li>Select source sheet/s and target sheet</li>
+                                                    <li>Select actions (Select/Hover/Menu) </li>
+                                                    <li>Select what to happen after clearing the filter</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <br />
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe src="https://www.youtube.com/embed/-XHIdwWo7uk"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            <b>Hlighlight actions</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+
+                                        Using highlight actions, we can highlight the marks of interest by brightening
+                                        the area and dimming the other areas.
+                                        Steps are same like creating filter action.
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe src="https://www.youtube.com/embed/5L3pxf4GK14"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            <b>Go to URL action</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Click on an area, it gets redirected to a webpage from Tableau.</li>
+                                            <li>You need multiple search values so to separate each item in search query
+                                                u specify item delimiter</li>
+                                            <li><b>Eg: </b>If item delimiter is ',' and u select it1 and it2 in viz,
+                                                then URL would be "baseURL=it1,it2"</li>
+                                            <li>If items selected from viz have any special characters in them, we can
+                                                replace them with specifying some value in 'Delimiter Escape field'</li>
+                                            <li><b>Eg: </b>If we have an item like '#petbird' and delimiter escape as
+                                                ',' then the item in URL gets replaced as ',petbird'</li>
+                                        </ul>
+
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe src="https://www.youtube.com/embed/NpiSFKaknRY"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingFour">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseFour" aria-expanded="false"
+                                            aria-controls="collapseFour">
+                                            <b>Parameter Actions</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        Upon changing a parameter in a source sheet, the targeted values/plots in the targeted sheet should get updated.<br/>
+                                        
+                                        
+                                        <ul style="list-style-type: decimal;">
+                                            <li>Create a parameter on Category 'param'.</li>
+                                            <li>Create a calculated field 'cf1' using the above created parameter.</li>
+                                            <li>IF [Category] ==[param] THEN [Subcategory] ELSE "" END</li>
+                                            <li>Plot 'Category + Subcategory' vs 'Sales(Sum)'</li>
+                                            <li>Show the parameter slider on viz.</li>
+                                            <li>Plot Category + cf1 vs SUM(Sales)</li>
+                                            <li>Click on any category in plot or select the category from the parameter dropdown.</li>
+                                            <li>We can see the data values changing</li>
+                                        </ul>
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe src=""
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingFive">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseFive" aria-expanded="false"
+                                            aria-controls="collapseFive">
+                                            <b>Set values Actions</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        
+                                        <div class="embed-responsive embed-responsive-21by9">
+                                            <iframe src=""
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                                <div class="card-header" id="headingSix">
+                                    <h5 class="mb-0">
+                                        <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                            class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#collapseSix" aria-expanded="false"
+                                            aria-controls="collapseSix">
+                                            <b>Go to Sheet Action</b>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        Navigation between any two worksheets or dashboard or stories.<br/>
+                                        Action->Go to Sheet -> Select multiple source sheets but only one target sheet.<br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="Calculation Field">
+                <h4>Calculation Field</h4>
+                <div class="card2">
+                    <div class="para">
+                        <ul></ul>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </section>
+
+    <!-- </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+<script>
+
+
+    var listItems = (document.querySelectorAll('.container1 h4'));
+    console.log(listItems);
+    var uli = document.querySelector('.appendixvals');
+    for (var i = 0; i < listItems.length; i++) {
+
+        var headingValue = listItems[i].textContent;
+        listItems[i].setAttribute("id", headingValue);
+        console.log(headingValue)
+        var listItemElement = document.createElement("li");
+        var anchorTagElement = document.createElement("A");
+        var urlTextValue = '#' + headingValue;
+        anchorTagElement.setAttribute("href", urlTextValue);
+        anchorTagElement.setAttribute("class", "js-scroll-trigger");
+        anchorTagElement.textContent = headingValue;
+        // l.textContent = nanval;
+        listItemElement.appendChild(anchorTagElement);
+        // var t = document.createTextNode(nanval);
+        uli.appendChild(listItemElement);
+    }
+</script>
+
+</html>
