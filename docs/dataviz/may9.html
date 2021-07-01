@@ -172,6 +172,7 @@
                             <li>At day level, we have greater granularity and raw data and least aggregation.</li>
                             <li>In Jigsaw puzzle, every piece of puzzle is raw data and the whole puzzle assembled is raw data. Or example of sugar cube.</li>
                         </ul>
+                        LOD INCLUDE: <br/>
                         We can check each subcategory average sales in 2 ways.<br/>
                         <ul>
                             <li>1. Plot Category+subcategory vs Sales. Drag sales to text area of viz.Select the Sales to be average instead of sum.</li>
@@ -183,11 +184,32 @@
                         Create a calculated field with "{ INCLUDE [Sub-Category] : AVG([Sales])}" and drag-drop to the viz.<br/>
                         Change the measure of the calculated field in viz to 'average'.<br/>
                         
+                        LOD EXCLUDE:<br/>
                         <b>How to exclude a field present  in viz from calculation?</b><br/>
                         Plot AVG(Sales) vs (State+City)<br/>
                         Now we dont want to calculate city wise average and only want state wise average(though city is in viz).<br/>
                         For that we use 'EXCLUDE' inside LOD like "{ EXCLUDE [CITY] : AVG([SALES])}"<br/>
-                        Drag-drop calculated field to the viz.<br/>
+                        Drag-drop calculated field to the viz.(Note that this field will change to 'attribute' in graph area)<br/>
+                        
+                        Attributes:<br/>
+                        Attr are capable of handling only single values. If we have multiple city values in a state, attr displays * else it shows the single value.
+                        How to check? Plot state+city -> Change city to attribute-> Examine the values
+
+                        LOD FIXED: <br/>
+                        When it comes to include/exclude we are including or excluding some dimensions from viz/worksheet.
+                        While using 'fixed' LOD, no matter what dimension is present in the worksheet, the calculation remains fixed.
+                        Example: <br/>
+                        We want to see customers with +ve profits and non positive profits in viz for any plot.<br/>
+                        <ul style="list-style-type: none;">
+                            <li>Plot City(any dimension) </li>
+                            <li>Create caclulated field with LOD “FIXED [CUSTOMER NAME] : SUM([PROFIT])>0 “-> This checks if customer’s profit is +ve or not.</li>
+                            <li>Now drag calculated field into viz to plot city vs calculated field.</li>
+                            <li>Click on dropdown of calculated field->Measure->Count. This gives us both customers with +ve and -ve and 0 profits.</li>                  
+                            <li>How to filter out +ve profitable customers???</li>
+                            <li>Either drag-drop calculated field1 to color or create another calculation field with LOD: “IF [CalcField1]=TRUE THEN “Profitable” ELSE “NON-Profitable” END” and drag-drop it to color area in viz.</li>
+                            <li>Upon hovering over the elements in viz, if I want to change the text in the info , click on tool tip in viz-> edit tooltip-> edit</li>
+                        </ul>
+
 
                         
                     </div>

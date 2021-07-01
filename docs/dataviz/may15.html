@@ -1,0 +1,317 @@
+<html>
+
+<head>
+    <title>Tableau notes</title>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+        integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-rel=popover]').popover({
+                html: true,
+                trigger: "hover"
+            });
+        })
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".sect" data-offset="50">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="./index.html">Nancy's notes</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="./index.html">Articles</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="./index.html/#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#contact">Contact</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+    <header class="masthead1 bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1>
+                Charts - Dashboards - Rank - Maps
+            </h1>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class='sect'>
+
+        <ul class='appendixvals' id="appendixvals">
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+
+
+    </div>
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container1">
+
+            <section id="Boxplot">
+                <h4>Boxplot</h4>
+                <div class="card2">
+                    <div class="para">
+                        <img style="width:315px;height:315px;border:none;box-shadow: 1em;" src="../assets/img/dataviz/boxplot.png"/><br/><br/>
+                        <ul style="list-style-type: none;">
+                            <li>Used mainly to identify outliers.</li>
+                            <li>Used to identify median, Q1,Q3.</li>
+                            <li>InterQuartile Range (IQR)= Q3-Q1</li>
+                            <li>To detect an outlier we use IQR.<b> Any point p is an outlier if p<(Q1- 1.5*IQR) or p>(Q3 + 1.5*IQR)</b></li>
+                        </ul><br/>
+                        <b>Steps:</b>
+                        <ul>
+                            <li>Plot <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Confused??"
+                                data-content="In Tableau, a quantitative column is called a measure">measure</a> vs any other dimension.</li>
+                            <li>If the measure has any aggregation, then remove it.
+                                 <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="How?"
+                                data-content="Tableau Menu bar option Analysis->Uncheck aggregate measures">How?</a>
+                            </li>
+                            <li>In the "Show Me" pane on RHS, select box plot graph.</li>
+                        </ul>
+                        
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7gjEWn-utyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                    </div>
+                </div>
+            </section>
+<br/><br/>
+            <section id="Donut Chart">
+                <h4>Donut Chart</h4>
+                <div class="card2">
+                    <div class="para">
+                        
+                        What is dual axes and its use?<br/>
+
+                        For dual axes, we need 2 measures. same for donut chart<br/>
+                        <b>Steps:</b><br/>
+                        <ul>
+                            <li>Drag-drop same measure twice to same axis in viz. (Sales-sales)</li>
+                            <li>Convert both of those measure to attribute by clicking on drodown arrow in axis of viz. Just dummy measures.</li>
+                            <li>Hide the headers by right clicking on viz area</li>
+                            <li>Create dual axis by clicking on drodpwon in viz area of dummy measure.</li>
+                            <li>In marks shelf, convert Marks= all-> Pie chart </li>
+                            <li>One pie chart lies on top of another in this chart.</li><li>Change size from standard=> Entire view.</li><li>
+                                In marks card, go to size-> increase size of pie chart.</li><li>Convert one color to different color. Select another dummy attr and reduce its size. </li>
+                        </ul>
+                        
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/TqumOcGGoiI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
+                    </div>
+                </div>
+            </section>
+            <br/><br/>
+
+            <section id="Lollipop Chart">
+                <h4>Lollipop Chart</h4>
+                <div class="card2">
+                    <div class="para">
+                        
+                        <b>Steps:</b><br/>
+                        <ul>
+                            <li>Drag-drop same measure twice to same axis(both in either row or column) in viz. (Sales-sales)</li>
+                            <li>Hide the headers by right clicking on viz area</li>
+                            <li>Create dual axis by clicking on drodpwon in viz area of second measure.</li>
+                            <li>In marks shelf, convert first measure to Bar and second measure to Circle </li>
+                            <li>Adjust the sizes of bars to look thinner and sizes of circle to look larger</li>
+                            <li>In Text marks card of Bar chart, drag-drop dimension and measure.</li>
+                        </ul>
+                        
+                        
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/TH24xEwYMng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+            <br/><br/>
+
+
+
+
+            <section id="Motion Chart">
+                <h4>Motion Chart</h4>
+                <div class="card2">
+                    <div class="para">
+                        
+                        <ul>
+                            <li>Makes it clear to visualise the pattern/trend the data points are following.</li>
+                            <li>Motion chart helps us see how the points are moving.</li>
+                            <li>Can customize the speed and display of data variations.It leaves a trail of ts previous values(History) occurring in its path.</li>
+                        </ul>
+
+                        <b>Steps:</b><br/>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_MqXMf9VzyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
+                    </div>
+                </div>
+            </section>
+            <br/><br/>
+            <section id="Maps">
+                <h4>Maps</h4>
+                <div class="card2">
+                    <div class="para">
+                        
+                        To create a map, we need to have atleast one geographic type field in viz to create a map.<br/>
+                        2 types of maps -> symbol map and filled map.<br/>
+                        Double click on any geographical column, You get Latitude and Longitude automatically generated.<br/>
+                        Drag-drop Latitude and Longitude into rows/cols-> Show me ->Select either filled map or simple map. <br/>
+                        Now if location is not recognised after drag-drop of latitude and longitude, then right click on viz area-> Edit location-> Select Country<br/>
+                        If theres any typo in location or using an abbreviation for location, then search it online and manually add it . <br/>
+                        <br/>
+                        <b><u>Customising map style or background</u></b><br/>
+                        Tableau menubar->Map->Map layers-> Customise background style (satellite view or street view) or map layers.<br/>
+                        <br/>
+                        <b><u>Getting customised mapstyles from outside Tableau:</u></b><br/>
+                            In mapbox.com, create a cstom style map-> shre with tableau and copy the integration Url<br/>
+                            In Tableau, map->background maps->add mapbox map->Paste the integration URL here.
+                            <br/>
+
+
+                        <ul>
+                            <li>Makes it clear to visualise the pattern/trend the data points are following.</li>
+                            <li>Motion chart helps us see how the points are moving.</li>
+                            <li>Can customize the speed and display of data variations.It leaves a trail of ts previous values(History) occurring in its path.</li>
+                        </ul>
+
+                        
+                        
+                        
+                    </div>
+                </div>
+            </section>
+            <br/><br/>
+            <section id="Dashboards and story points">
+                <h4>Dashboards and story points</h4>
+                <div class="card2">
+                    <div class="para">
+                        <b>Plot following</b> <br/>
+                        Sheet-1: Category+Sales with Color:Region.<br/>
+Sheet-2: Cat+sub-cat vs Sales with Region on Color.<br/>
+Sheet-3: Category+Latitude vs longitude with Color:Region, Detail: state<br/>
+
+Create a new dashboard with above created 3 sheets.<br/>
+Click on Size=>Automatic to make dashboard fill the entire screen width.<br/>
+
+Funnel icon on sheet present in dashboard -> Shortcut to action by filter->the sheet which has the icon is source sheet and rest are target sheets.<br/>
+This can be activated on any sheet in dashboard making that the source sheet and the remaining the target sheets.<br/>
+
+If we want any sheet to be excluded from being changed upon actions in any other sheet in dashboard, then click on the sheet(which we dont want to change) dropdown -> Ignore Actions.<i>This sheet will be ignoring actions applied on any other action on dashboard.</i><br/>
+
+To create an interactive filter on dashboard, click on dropdown of any sheet (which has same sheet as target) -> Filters -> Column name.<br/>
+To convert this to a global filter(entire dashbaird to be affected including source sheet), click on dropdown of interactive filter->apply to worksheets->all using this data source.<br/>
+
+We can add caption to every worksheet by clicking on dropdown for each sheet on dashbboard- Usually it has default description of the worksheet.<br/>
+
+By default auto updates are enabled. Inorder to improvise performance, incase of very large data, we can disable 'auto updated'. <br/>
+ 
+Action by highlight-> Sheet dropdown-> Highlight-> col name<br/>
+
+If we want a floating sheet in dashboard ( without it filling entire space), click on dropdown of that sheet, make it floating.<br/>
+<br/>
+<b><u>Objects in dashboard</u></b><br/>
+Can be found on the left pane of Tableau dashboard.<br/>
+When we have few horizontal worksheets in a dashboard, whose height doesn’t fit the screen length (in such cases, a scroll bar appears avoiding graph cutoffs).<br/>
+To automatically align them horizontally or vertically to fit entire height, we can use containers in dashboard that automatically fits each of the sheets according to their alignment. To do this, drag-drop one horizontal and one vertical containers to the dashboard before dragging any sheets to the dashboard.<br/>
+
+Can also add a webpage object by drag-drop to the dashboard from the Objects pane in left of dashboard.<br/>
+
+Blank space object is used to give enough space between the objects in dashboard (used for aesthetic purposes), whose width/height can be manually adjusted.<br/>
+<br/>
+<b><u>Storypoint</u></b><br/>
+Storypoints= arrangement of  worksheets + dashboards arranged in a sequential way as if narrating a story.<br/>
+In first page on stnrypoint, add a sheet/dashboard then add blank page and in next page, add another sheet/dashboard and so on.<br/>
+
+                       
+                    </div>
+                </div>
+            </section>
+
+            <br/><br/>
+            <section id="Rank">
+                <h4>Rank</h4>
+                <div class="card2">
+                    <div class="para">
+                        
+                        It’s a quick table calculation and we have 5 different functions under Rank.<br/>
+Based on only measures, we will be able to rank the data.<br/>
+
+If  want to arrange data based on the highest value of a column having Rank -1 then use Rank calculation<br/>
+Create a new calculationin worksheet.-> RANK(SUM(SALES))<br/>
+
+Simple rank- same position more than 1 means the next n ranks get omitted.<br/>
+Rank dense- no omission for any rank <br/>
+Rank modifed= omits previous lower rank<br/>
+Unique rank- each row gets unique rank based on the aplhabetical order of dimension incase of same measure values.<br/>
+Rank percentile - percentile based on the measure.<br/>
+                    </div>
+                </div>
+            </section>
+
+            <br/><br/>
+        </div>
+    </section>
+
+    <!-- </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+<script>
+
+
+    var listItems = (document.querySelectorAll('.container1 h4'));
+    console.log(listItems);
+    var uli = document.querySelector('.appendixvals');
+    for (var i = 0; i < listItems.length; i++) {
+
+        var headingValue = listItems[i].textContent;
+        listItems[i].setAttribute("id", headingValue);
+        console.log(headingValue)
+        var listItemElement = document.createElement("li");
+        var anchorTagElement = document.createElement("A");
+        var urlTextValue = '#' + headingValue;
+        anchorTagElement.setAttribute("href", urlTextValue);
+        anchorTagElement.setAttribute("class", "js-scroll-trigger");
+        anchorTagElement.textContent = headingValue;
+        // l.textContent = nanval;
+        listItemElement.appendChild(anchorTagElement);
+        // var t = document.createTextNode(nanval);
+        uli.appendChild(listItemElement);
+    }
+</script>
+
+</html>

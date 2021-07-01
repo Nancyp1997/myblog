@@ -1,0 +1,411 @@
+<html>
+
+<head>
+    <title>Nancy's notes</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/nerdemoji.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+        integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-rel=popover]').popover({
+                html: true,
+                trigger: "hover"
+            });
+        })
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".sect" data-offset="50">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Nancy's notes</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <header class="masthead1 bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1>
+                Few basics in Tableau
+            </h1>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class='sect'>
+
+        <ul class='appendixvals' id="appendixvals">
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+
+
+    </div>
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container1">
+
+            <section id="Basics">
+                <h4>Basics</h4>
+
+
+                <ul style="list-style-type: none;">
+                    <li>
+                        <h4>Data types</h4>
+                    </li>
+                    <li><img src="../assets/img/dataviz/datatypes.png" /></li>
+                    <li>Using data interpreter, we can clean the data in Tableau. But what does it do exactly?</li>
+                    <li>
+                        <h4>Field types</h4>
+                    </li>
+                    <li><img src="../assets/img/dataviz/fieldTypes.png" /></li>
+                    <li>
+                        <h4>File types </h4>
+                    </li>
+                    <li>
+                        <table class="table table-striped" style="margin-right: 2em;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">File Type</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Workbook (.twb)</td>
+                                    <td>Workbooks = Worksheets+dashboards+Stories</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Bookmark(.tbm)</td>
+                                    <td>Contains a single sheet</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Packaged workbook(.twbx)</td>
+                                    <td>An archive containing a workbook + data sources + files</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Data extract(.hyper)</td>
+                                    <td>Local copy of a subset or the entire data src to share and improve performance.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Data source(.tds)</td>
+                                    <td>Shortcut to frequently used data sources containing information and
+                                        modifications. </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Packaged data source(.tdsx)</td>
+                                    <td>Archive containing a data source file + any other related files.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </li>
+                    <li>
+                        <h4>Relationship vs Join</h4>
+                        <table class="table table-striped" style="margin-right: 2em;">
+                            
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Relationships</th>
+                                    <th>Joins</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table--stripes">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Defined between logical tables in the Relationship canvas (logical layer)</td>
+                                    <td>Defined between physical tables in the Join/Union canvas (physical layer)</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Don't require you to define a join type </td>
+                                    <td>Require join planning and join type</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Act like containers for tables that are joined or unioned</td>
+                                    <td>Are merged into their logical table</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Only data relevant to the viz is queried. Cardinality and referential integrity settings
+                                        can be adjusted to optimize queries.</td>
+                                    <td>Run as part of every query</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Level of detail is at the aggregate for the viz</td>
+                                    <td>Level of detail is at the row level for the single table</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Join types are automatically formed by Tableau based on the context of analysis. Tableau
+                                        determines the necessary joins based on the measures and dimensions in the viz.</td>
+                                    <td>Join types are static and fixed in the data source, regardless of analytical context.
+                                        Joins and unions are established prior to analysis and don’t change.</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Rows are not duplicated</td>
+                                    <td>Merged table data can result in duplication</td>
+                                </tr>
+                                <tr><td>8</td>
+                                    <td>Unmatched records are included in aggregates, unless explicitly excluded</td>
+                                    <td>Unmatched records are omitted from the merged data</td>
+                                </tr>
+                                <tr><td>9</td>
+                                    <td>Create independent domains at multiple levels of detail</td>
+                                    <td>Support scenarios that require a single table of data, such as&nbsp;extract filters and
+                                        aggregation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>When duplication or the filtering effects of a join might be desirable, use joins to merge tables together instead of relationships. Double-click a logical table to open the physical layer and add joined tables.</li>
+                    <li>A relationship describes how two independent tables relate to each other but does not merge the tables together. This avoids the data duplication and filtering issues that might occur in a join and can make working with your data easier.
+
+                    </li>
+                    <li>Differences between Data Blending and Data Joining
+
+                        The major differences between the two are: Data Blending allows a combination of data from different data sources to be linked. Whereas, Data Joining works only with data from one and the same source.Blends only support left joins, while relationships support full outer joins. Blends can be customized on a per-sheet basis.</li>
+                    <li>While both relationships and blends support analysis at different levels of detail, they have distinct differences. If you want to combine data from published data sources, blends are currently your only option. You might also choose to use blends when the fields used to join two tables are dependent on the worksheet.</li>
+
+                </ul>
+                Relationships versus blends
+While both relationships and blends support analysis at different levels of detail, they have distinct differences. One reason you might use blends over relationships is to combine published data sources for your analysis.
+
+RELATIONSHIPS	BLENDS
+Defined in the data source	Defined in the worksheet between a primary and a secondary data source
+Can be published	Can't be published
+All tables are equal semantically	Depend on selection of primary and secondary data sources, and how those data sources are structured.
+Support full outer joins	Only support left joins
+Computed locally	Computed as part of the SQL query
+Related fields are fixed	Related fields vary by sheet (can be customized on a sheet-by-sheet basis)
+
+               
+
+
+
+
+                <i>Not sure what dimension is!!
+                    <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Confused??"
+                        data-content="In Tableau, a categorical column is called a dimension">Click here!</a>
+                </i><br />
+                <i>Not sure what a measure is!!
+                    <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Confused??"
+                        data-content="In Tableau, a quantitative column is called a measure">Click here!</a>
+                </i><br /><br />
+
+                <br />
+
+                <div id="accordion" style="opacity: 100%;background-color: whitesmoke ;padding-top: 0.2em;">
+                    <div class="card" style=" padding: 1em;">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                    class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <b>CONSTANT SET</b>
+                                </a>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>Constant sets are multi dimensional i.e, const sets can have more than
+                                        one column in its data.</li>
+                                    <li>These have to be created manually.</li>
+                                    <li>Check this video to see how a constant set is created.</li>
+                                    <li>Created constant sets are placed under dimensions (eventhough they have
+                                        continuous data in it because after being placed in set, the values are
+                                        countable).</li>
+                                </ul>
+
+                                <div class="embed-responsive embed-responsive-21by9">
+                                    <iframe src="https://www.youtube.com/embed/Cq3FWBuOmsc" title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <br />
+                                <b>
+                                    <a style="color: #2c3e50;" tabindex="0" class="link" data-toggle="popover"
+                                        data-trigger="focus" title="Steps"
+                                        data-content="Drag-drop the set onto the color of the graph. Check the data according to the color legend.">How
+                                        do I check the items in the constant set?</a>
+                                </b><br />
+                                <br />
+                                <i><b>Note:</b> Distinct features of constant set is that even if the underlying
+                                    data changes, the data in constant set <u>doesn't</u> change.<br />
+                                    To get the data of constant set refreshed or to get new updated data which
+                                    is being overridden due to constant set creation, we can remove the data
+                                    from the set.
+                                </i><br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                    class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    <b>COMPUTED SET</b>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>Uses some underlying condition logic to create the set.</li>
+                                    <li>Unlike the constant set, computed set dynamically updates its members on
+                                        auto-refresh, if there are any underlying changes in the data.</li>
+                                    <li>It is <b>one dimensional</b> i.e, you can have only entries of only one
+                                        column in the computed set.</li>
+                                    <li>How to create it?<ul>
+                                            <li>Hover over to the dimension of choice</li>
+                                            <li>Click the drop-down icon.</li>
+                                            <li>Create set</li>
+                                            <li>While creating set, set the condition like 'Top3' or 'bottom 3'
+                                                or 'middle 5'</li>
+                                        </ul>
+                                    </li>
+                                    <div class="embed-responsive embed-responsive-21by9">
+                                        <iframe src="https://www.youtube.com/embed/ErNzdbKzMKo"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-top: 0.2em; padding: 1em;">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <a style="display:block; text-align: left;text-decoration: none;color:#2c3e50;"
+                                    class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    <b>COMBINED SET</b>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordion">
+                            <div class="card-body">
+
+                                <ul>
+                                    <li>Select any set. </li>
+                                    <li>Click on drop down-> Create combined set.</li>
+                                    <li>In the dialog box, select the other set you want to combine it with.
+                                    </li>
+                                    <li>CAN BE CREATED FOR <b>BOTH ONE DIMENSIONAL AND MULTI DIMENSIONAL.</b>
+                                    </li>
+                                    <li>Try creating two sets - top 2 by some condition and bottom 2 by same
+                                        condition.Create combined set. Eg: Top and bottom 2 item-categories by
+                                        sales. </li>
+                                </ul>
+                                <b>Note: Only two sets with same dimensions can be combined with one another.
+                                </b><br />
+                                <div class="embed-responsive embed-responsive-21by9">
+                                    <iframe src="https://www.youtube.com/embed/kgksgS-6Qiw" title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                Try it !!<br />
+                <i>How to get Top 6-10 rows of a dimension?
+                    <a tabindex="0" class="link" data-toggle="popover" data-trigger="focus" title="Answer"
+                        data-content="1. Create Top 10 set 2. Create Top 5 set 3. Create combined set by selecting left/right outer join for above created sets.">Click
+                        here!</a>
+                </i><br /><br />
+                We cannot create sets for measures ( quantitative columns), instead we create bins. <br />
+                Sets for dimensions(discrete values)<br />
+                Bins for measures(continuous values) <br />
+
+
+            </section>
+
+
+
+
+        </div>
+    </section>
+
+    <!-- </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+<script>
+
+
+    var listItems = (document.querySelectorAll('.container1 h4'));
+    console.log(listItems);
+    var uli = document.querySelector('.appendixvals');
+    for (var i = 0; i < listItems.length; i++) {
+
+        var headingValue = listItems[i].textContent;
+        listItems[i].setAttribute("id", headingValue);
+        console.log(headingValue)
+        var listItemElement = document.createElement("li");
+        var anchorTagElement = document.createElement("A");
+        var urlTextValue = '#' + headingValue;
+        anchorTagElement.setAttribute("href", urlTextValue);
+        anchorTagElement.setAttribute("class", "js-scroll-trigger");
+        anchorTagElement.textContent = headingValue;
+        // l.textContent = nanval;
+        listItemElement.appendChild(anchorTagElement);
+        // var t = document.createTextNode(nanval);
+        uli.appendChild(listItemElement);
+    }
+</script>
+
+</html>
