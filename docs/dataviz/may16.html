@@ -1,0 +1,262 @@
+<html>
+
+<head>
+    <title>Tableau notes</title>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+        integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-rel=popover]').popover({
+                html: true,
+                trigger: "hover"
+            });
+        })
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".sect" data-offset="50">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Nancy's notes</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="./index.html">Articles</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="./index.html/#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#contact">Contact</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+    <header class="masthead1 bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1>
+                Forecasting & Clustering
+            </h1>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class='sect'>
+
+        <ul class='appendixvals' id="appendixvals">
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+
+
+    </div>
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container1">
+
+        
+
+
+            <section id="Forecasting">
+                <h4>Forecasting</h4>
+                <div class="card2">
+                    <div class="para">
+                       
+                        Forecasting : past events+present events -> identify patterns -> applies them to the future.
+The more data, we have, the more accurate the forecasting will be .
+
+Moving avg: smooths out the fluctutations in data by calculating an average within a given window of time period.
+Types of moving avg: Simple(all data is equally weighed) and exponential(recent data is given more weight)
+
+Tableau’s inbuilt forecasting tool- Exponential moving avg
+
+Sample-suerstore data
+How to use Tbealus inbuilt forecasting tool?
+When we use forecasting, we get beetter accuracy if we use a continuous date field than discrete datefield.
+
+Plot Month(Order Date) vs Sum(Sales). Right click on viz->Forecast->Show forecast
+
+We change forecast options by rightclick->Forecast->Forecast options.
+Automatic forecast
+By default,It ignores last/latest of data.(Eg: Last month). TO change this, we can set this in forecast options to not ignore any data.
+
+Diff bw exactly and until options in forecast options:
+1.Lets say we ignore last 2 months of data in forecast options.
+2.Change radio butn to Exactly from Automatic.
+3.The data in Exactly could be one yr and we have our original data till Dec 2018. Since we ignored last one month in forecast options, with ‘Exact option’, we get forecast from Dec 2018(included) till Nov 2019(included).
+With ‘Until option’, we get forecast from Dec 2018 to Dec 2018 only( since its the end until a year).
+
+Lets see how the missing values option work. To check it apply a new filter on Order Date, with deselecting some values generating missing values(if not any in dataset). We cna then use fill in with missing values box to fill it up with zeros.
+
+Trend - a direction in which the data goes
+Seasonality - a pattern that repeats itself over a given time span.
+
+The light blue area around the solid line in forecast part is the  confidence interval in which the prediction may fall.  
+
+
+
+From 1:06 ,
+R returns passed in data + forecasted data.
+
+Eg: If we passed sales data of years 2015-19 and expect forecast of next 2 years, R returns  data of new length = length of passed in data + additional 2 yrs of forecasted data. So dimensions mismatch happens. Hence the oldest data is snipped off to adjust the dimensions match.
+
+Tableau has no idea about R syntax. So make sure to write exact syntax.
+
+Now to visualize the data along with forecasted data, we have to update our axis. To do that, we need to write another calculation.
+
+Plot Month(OrderDate) vs R Code column
+R code gets eexecuted and sends back data to Tableau.
+
+Create. a calculated field. Type in Pthon code and use it in worksheet as row or col. 
+
+For Python integration:
+conda install -c anaconda tabpy-server
+ Go to tabpy_server and run startup.bat
+
+In tableau->tableau menu bar-> help=> settings and performance->manage analytics extension/connection -> Tabpy -> setup details  with hostname-localhost and port: 9004 . By doing this the current workbook is connected with Python. 
+
+
+Analytics pane in Worksheet 
+=====================
+Plot cat+subcat    vs sales
+
+Constant Line= at any value specified, a line(for measure) would be displayed for us to visualise that reference.
+
+Reference Lines holds constant line+ average line. In this we have table,pane and cell.  
+We cna select Lne tab=? In that we can select measure based on which we can calculate the metrc. We can choose average (min/max/median value) for the metric. For label, we can set a label for the line we chose before. 
+Can also choose 95% CI for any calculated metric.
+Boxplot hcarts styles can be edited from Analytics pane->Edit Regerence lines..->boxplot tab-> customize accordingly.
+
+
+Cluster analysis in Tableau:
+====================
+Import iris data in new workbook
+
+Plot Petal length vs petal with. 
+If i want a plot for every combination of petal length and petal Width individual values, then remove the aggregation. (Tableau menubar->Analysis->Uncheck aggregation measures). Color: Species. 
+
+How to form clusters without using species column?
+Plot petal length vs petal width. To do that , theres an inbuilt clistering algo in Tableau analytics pane on LHS. Drag-drop Cluster from LHS pane to worksheet.
+You can custmoize the number of clusters  and enter the number or we can leave the Tableau to automatically create clusters depedning on ur data.
+You can then compare 2 sheets in dashboard. Errors are negligible.
+
+We can aslo use clustering algo (k-means) from R in Tableau using extensions. Import R extension in worksheet and setup R connection. Plot Petal Lendhth vs Petal width and remove aggregations in both of them. Create a new calculated field that imports k-means and runs it. Content in calculated field is as follows:
+SCRIPT_INT(“x=kmeans(data.frame(.arg1,.arg2),3,iter.max=10 )x$cluster”SUM([Petal.Length]),SUM([Petal.Width]) )
+Any R code in clculated field in tableau needs to be placed inside “SCRIPT_INT” tag.
+k-mean creates k centroids for the data. It checks which centroid is close to the given data point.Then we get k clusters.
+
+Now drag-drop newly created calculated field to Color marks card.
+Compare this worksheet with all two created sheets for clustering.
+Errors would be there else it would be overfitting.
+
+
+LOD example:
+===========
+Assignment 3 Q: Hw many days in a month we hv profitable/highly proftiable and unprofitable days?
+How to calculate profit per day? 
+{ FIXED [ORDER DATE] : SUM([Profit]) }
+Another calculated field Profitability with LOD:
+{ IF (CalculatedField1>1000) THEN “Highly proftiable” ELIF}
+
+Plot OrderDate (yr and month) vs calculatedField2+(calculated field2)
+change secondly dragged calculated fIeld 2 aggregation from Sum to cnt.
+In marks card, change it to Bar chart. Color: Profitability.
+                    </div>
+                </div>
+            </section>
+            <br/><br/>
+            <section id="Clustering">
+                <h4>Clustering</h4>
+                <div class="card2">
+                    <div class="para">
+                        
+                        
+                       
+                    </div>
+                </div>
+            </section>
+
+            <br/><br/>
+            <section id="Rank">
+                <h4>Rank</h4>
+                <div class="card2">
+                    <div class="para">
+                        
+                        It’s a quick table calculation and we have 5 different functions under Rank.<br/>
+Based on only measures, we will be able to rank the data.<br/>
+
+If  want to arrange data based on the highest value of a column having Rank -1 then use Rank calculation<br/>
+Create a new calculationin worksheet.-> RANK(SUM(SALES))<br/>
+
+Simple rank- same position more than 1 means the next n ranks get omitted.<br/>
+Rank dense- no omission for any rank <br/>
+Rank modifed= omits previous lower rank<br/>
+Unique rank- each row gets unique rank based on the aplhabetical order of dimension incase of same measure values.<br/>
+Rank percentile - percentile based on the measure.<br/>
+                    </div>
+                </div>
+            </section>
+
+            <br/><br/>
+        </div>
+    </section>
+
+    <!-- </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+<script>
+
+
+    var listItems = (document.querySelectorAll('.container1 h4'));
+    console.log(listItems);
+    var uli = document.querySelector('.appendixvals');
+    for (var i = 0; i < listItems.length; i++) {
+
+        var headingValue = listItems[i].textContent;
+        listItems[i].setAttribute("id", headingValue);
+        console.log(headingValue)
+        var listItemElement = document.createElement("li");
+        var anchorTagElement = document.createElement("A");
+        var urlTextValue = '#' + headingValue;
+        anchorTagElement.setAttribute("href", urlTextValue);
+        anchorTagElement.setAttribute("class", "js-scroll-trigger");
+        anchorTagElement.textContent = headingValue;
+        // l.textContent = nanval;
+        listItemElement.appendChild(anchorTagElement);
+        // var t = document.createTextNode(nanval);
+        uli.appendChild(listItemElement);
+    }
+</script>
+
+</html>
