@@ -1,0 +1,238 @@
+<html>
+
+<head>
+    <title>Nancy's notes</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/nerdemoji.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+        integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-rel=popover]').popover({
+                html: true,
+                trigger: "hover"
+            });
+        })
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".sect" data-offset="50">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Nancy's notes</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <header class="masthead1 bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1>
+                Hadoop basics
+            </h1>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class='sect'>
+
+        <ul class='appendixvals' id="appendixvals">
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+
+
+    </div>
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container1">
+
+            <section id="Basics">
+                <h4>Basics</h4>
+                <br/>
+
+                <ul style="list-style-type: none;">
+                    <li>
+                        <h4>What does Hadoop give us to use?</h4>
+                    </li>
+                    
+                    <li>Hadoop gives us 2 services.(Store and process) It takes big data as input. </li>
+                    <li>
+                        So now, how does store and process work in Hadoop?
+                    </li>
+                    <br/>
+                    <li> <i>Eg: </i>Lets take a company that has its presence in 150 countries and people loved them. Just the previous day their FB page got 1B views. Now the CEO wants to see a dashboard where he sees the whole globe and upon hovering over any country, the dashboard should show how many likes the page received from that country.</li>
+                    <li>The PM starts the project of building dashboard and he has 2 members in his team(Admin & Developer)</li>
+                    <br/>
+                    <li><b>Setup of system infrastructure</b>
+                        <ul>
+                            <li>
+                                Admin purchases 5 machines(one will be master and 4 will be slaves).
+                            </li>
+                            <li>On the master node, he installs "storage master" and "processing master". </li>
+                            <li>On the slave nodes, he installs "storage slave" and "processing slave". </li>
+                        </ul>
+                    </li>
+                    <br/>
+                    <li><b>Data distribution:</b>
+                        <ul>
+                            <li>Developer takes data(Facebook.json since he gets the data from the FB page.) and this is sent as an input to the master node. 
+                            </li><li>Lets say the size of this file is 640 MB. This file is broken into blocks of 128 MB and each block is replicated 3 times(Which means 15 blocks). 
+                            </li><li>Storage master just has metadata(data about data which is split among the slave nodes).
+                            </li><li>    Facebook.json -> 1,2,3,4,5 block numbers
+                            </li><li>    Block 1->Slace 1,2,3
+                            </li><li>    Block 2-> Slave 2,3,4
+                            </li><li>Data like this is stored on master node, which is metadata like above.
+                            </li>
+                        </ul>
+                    </li>
+                    <br/>
+                    <li><b>Program logic:</b>
+                        <ul>
+                            <li>Processing master will copy the processing logic and the master will push it to the slave nodes.
+                            </li><li>The processing master will tell slave 1 to process block 1,2( which are local to you) and slave 2 will process block 3(which is local to you).
+                            </li>
+                        </ul>
+                    </li>
+                    <br/>
+                    <li><b>Key takeaway:</b><br/>
+                        <i>How Store works?:</i> Takes the data -> cut into pieces -> spread it across slave nodes.<br/>
+                        <i>How Process works?:</i> Write program ->Spread it on to machines -> Run it on local blocks.<br/>
+                    </li>
+
+                    <li><img src="../assets/img/dataviz/fieldTypes.png" /></li>
+                    <br/>
+                    <li>
+                        <h4>Some names for systems in Hadoop ecosystem </h4>
+                    </li>
+                    <li>
+                        <table class="table table-striped" style="margin-right: 2em;">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Node type</th>
+                                    <th scope="col">Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Hadoop</th>
+                                    <td>Master</td>
+                                    <td>Name node</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Hadoop</th>
+                                    <td>Slave</td>
+                                    <td>Data node</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">MapReduce</th>
+                                    <td>Master</td>
+                                    <td>Job Tracker</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">MapReduce</th>
+                                    <td>Slave</td>
+                                    <td>Task Tracker
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </li>
+                    <br/>
+                    <li>
+                        <h4>Hadoop 1.x vs 2.x</h4><br/>
+                        <img src="../assets/img/hadoop/hadoopversion1.png"/><br/>
+                        The setup which is Hadoop 1.x has one very serious limitation. It only allows you to write programs in MapReduce or any framework that runs in MapReduce.<br/>
+                        In next version of Hadoop (Hadoop 2.X), instead of MapReduce, we bring a new component named YARN, which gives resources to any component whether it supports MapReduce or not. Means it can support MapReduce, Spark and others.  
+                        <br/>
+                        MapReduce is one of the way here now. :) <br/><br/>
+                        <b>How does system infra change wrt Hadoop 2.x?</b><br/>
+                        <img src="../assets/img/hadoop/hadoopversion2.png"/><br/>
+                        <ul>
+                        <li>Storage infra remains the same. </li><li>
+                        For any incoming MapReduce job, YARN Master doesnt know how to run MapReduce but it knows a slave node that has App Master that can help process  Mapreduce job. </li><li>
+                        Now YARN will initisalie App Master on any one of the slave node. </li><li>App Master is the process that will do the job. </li><li>
+                        YARN Master delegates the MapReduce job to MRAppMaster. </li><li>App Master sends a request stating the resources it required on slave nodes. </li>
+                        <li>YARN Master acks the resources and then AppMaster sends requests to the slave nodes whose resources it requested the YARN Master. </li>
+                        <li>So this AppMaster which can be MapReduce/Spark/Impala can ask resources.</li>
+                        </ul>
+                        <br/>
+
+
+
+
+                    </li>
+                    
+                </ul>
+               
+
+
+
+
+            </section>
+
+
+
+
+        </div>
+    </section>
+
+    <!-- </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+<script>
+
+
+    var listItems = (document.querySelectorAll('.container1 h4'));
+    console.log(listItems);
+    var uli = document.querySelector('.appendixvals');
+    for (var i = 0; i < listItems.length; i++) {
+
+        var headingValue = listItems[i].textContent;
+        listItems[i].setAttribute("id", headingValue);
+        console.log(headingValue)
+        var listItemElement = document.createElement("li");
+        var anchorTagElement = document.createElement("A");
+        var urlTextValue = '#' + headingValue;
+        anchorTagElement.setAttribute("href", urlTextValue);
+        anchorTagElement.setAttribute("class", "js-scroll-trigger");
+        anchorTagElement.textContent = headingValue;
+        // l.textContent = nanval;
+        listItemElement.appendChild(anchorTagElement);
+        // var t = document.createTextNode(nanval);
+        uli.appendChild(listItemElement);
+    }
+</script>
+
+</html>
