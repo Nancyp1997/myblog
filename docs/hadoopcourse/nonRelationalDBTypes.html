@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <title>Nancy's notes</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/nerdemoji.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+        integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-rel=popover]').popover({
+                html: true,
+                trigger: "hover"
+            });
+        })
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".sect" data-offset="50">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Nancy's notes</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <header class="masthead1 bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1>
+                NoSQL databases
+            </h1>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class='sect'>
+
+        <ul class='appendixvals' id="appendixvals">
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+
+
+    </div>
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container1">
+
+            <section id="Basics">
+                <h4>NoSQL databases comparison</h4>
+                
+
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col"> </th>
+                        <th scope="col">Document</th>
+                        <th scope="col">Graph</th>
+                        <th scope="col">Key-value</th>
+                        <th scope="col">Time series</th>
+                        <th scope="col">Wide column</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Why?</th>
+                        
+                        <td>To store data in document oriented model in independent documents.</td>
+                        <td>Complex relations in relational DB make responses slow. To speed up the response times, data that needs complex joins for meaningful results are stored in graph databases, where tables are vertices and edges are the relationships like in RDBMS. </td>
+                        <td>Fetch in O(1) time. Fetch data with minimum latency. </td>
+                        <td>Used to track & persist data that is continually read & written over time period. </td>
+                        <td>Handle big data. Perfect for analytics use cases. Highly performant and scalable. </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">When to pick this?</th>
+                        
+                        <td>Pick this when you need a flexible schema that changes often & when you need to scale fast alongside staying highly available. </td>
+                        <td>Pick this for network graphs, recommendation engines, fraud analysis, genetic data use cases. Whenever you need to store complex relationships, consider graph database. </td>
+                        <td>Pick this to fetch data fast with minimum latency.</td>
+                        <td>To store time series data.</td>
+                        <td>Pick this to handle big data analytics. Ensures scalability, performance and high availability. </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Use cases</th>
+                        <td>Real-time feeds, live-sports apps, inventory management, storing user comments, web-based multiplayer games.</td>
+                        <td>Relationships between users in social networks, maps. </td>
+                        <td>Used in caching, persisting user state & user sessions, managing real time data & implementing queues. Creating leaderboards in online games and web apps. Implementing a pub-sub system. </td>
+                        <td>Handling real time data like data from iOT devices. Managing data for running monitoring & analytics. Writing an autonomous trading platform to see trends in stock prices in real time. </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Enterprise products</th>
+                        <td>MongoDB, CouchDB, OrientDB, Google cloud datastore & Amazon documentDB.</td>
+                        <td>Neo4J</td>
+                        <td>Redis, Hazelcast, Riak, Voldemort and Memcached.</td>
+                        <td>InfluxDb, Timescale DB, Prometheus</td>
+                        <td>Cassandra, HBase, Google BigTable, ScyllaDB</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Companies</th>
+                        <td>SEGA uses MongoDB. Coinbase scaled from 15k to 1.2 mil requests per minute with MongoDB.</td>
+                        <td>Walmart shows product recommendations to its customers using Neo4J graph DB. NASA uses Neo4J to store lessons learned data from previous missions.  </td>
+                        <td>Microsoft uses Redis to handle traffic spikes on its platforms. Google cloud uses Memcached to implement caching on their cloud platform. </td>
+                        <td>IBM uses InfluxDB  for real time fraud detection analytics. Spiio uses InfluxDB to monitor plant installations. </td>
+                        <td>Netflix uses Cassandra in analytics infrastructure. Adobe uses HBase for processing large amounts of data. </td>
+                      </tr>
+                    </tbody>
+                  </table>
+               
+
+
+
+
+            </section>
+
+
+
+
+        </div>
+    </section>
+
+    <!-- </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+<script>
+
+
+    var listItems = (document.querySelectorAll('.container1 h4'));
+    console.log(listItems);
+    var uli = document.querySelector('.appendixvals');
+    for (var i = 0; i < listItems.length; i++) {
+
+        var headingValue = listItems[i].textContent;
+        listItems[i].setAttribute("id", headingValue);
+        console.log(headingValue)
+        var listItemElement = document.createElement("li");
+        var anchorTagElement = document.createElement("A");
+        var urlTextValue = '#' + headingValue;
+        anchorTagElement.setAttribute("href", urlTextValue);
+        anchorTagElement.setAttribute("class", "js-scroll-trigger");
+        anchorTagElement.textContent = headingValue;
+        // l.textContent = nanval;
+        listItemElement.appendChild(anchorTagElement);
+        // var t = document.createTextNode(nanval);
+        uli.appendChild(listItemElement);
+    }
+</script>
+
+</html>
